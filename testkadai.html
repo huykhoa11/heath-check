@@ -1,0 +1,218 @@
+testkadai.html <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Health Check</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<style>
+	    body {background-color: rgb(227, 241, 212);}
+	    .jumbotron h1 {color: #fff;}
+	    .jumbotron p {color: #fff;}
+  	</style>
+
+	<script language="javascript" type="text/javascript">
+		function calc() {
+			h  = document.keisan.take1.value;
+			w  = document.keisan.take2.value;
+			var checkbox = document.getElementsByName("check");
+
+			var age    = document.keisan.take3.value;
+			var e  	   = document.getElementById("InputSelect");
+ 
+
+			
+
+			sw = h/100 * h/100 * 22;
+			manpuku = w / ((h/100) * (h/100));
+			document.getElementById("std").innerHTML = sw;
+			document.getElementById("std1").innerHTML = manpuku;
+
+			if(manpuku < 18.5) {hantei="やせすぎ";}
+			else if (manpuku >= 18.5 && manpuku < 25) {hantei = "標準";}
+			else if (manpuku >= 25 && manpuku < 30) {hantei = "太りぎみ";}
+			else if (manpuku >= 30) {hantei = "満腹";}
+			document.getElementById("std2").innerHTML = hantei
+
+			
+			document.getElementById("btn1").onclick = function ()
+            {
+
+				var bmr = 0;
+			var dan = 0;
+			var on  = 0;
+			var tdee = 0;
+			
+
+			for(var i = 0; i < checkbox.length; i++){
+				if(checkbox[0].checked === true) {
+					dan = 1; 
+					on  = 0;
+					bmr = 13.397*w + 4.799*h - 5.677*age + 88.362;
+				}
+				else if (checkbox[1].checked === false){
+					dan = 0; 
+					on  = 1;
+					bmr = 9.247*w + 3.098*h - 4.33*age + 447.593;
+				}
+			}
+			
+
+
+				var tdee = 0;
+                var checkabc = document.getElementsByName("checkabc");
+                for(var i = 0; i < checkabc.length; i++) {
+					if 		(checkabc[0].checked === true) {tdee = bmr*1.2;}
+					else if (checkabc[1].checked === true) {tdee = bmr*1.375;}
+					else if (checkabc[2].checked === true) {tdee = bmr*1.55;}
+					else if (checkabc[3].checked === true) {tdee = bmr*1.725;}
+					else if (checkabc[4].checked === true) {tdee = bmr*1.9;}
+				}
+				document.getElementById("std3").innerHTML = tdee;
+
+            };
+
+		}
+	</script>
+</head>
+<body>
+
+	<div class ="container">
+		<div class="jumbotron" style="background:url(https://chowhound1.cbsistatic.com/thumbnail/800/0/chowhound1.cbsistatic.com/blog-media/2019/01/easy-healthy-diet-tips-chowhound.jpg) center no-repeat; background-size: cover;">
+	      <h1><strong> 満腹度判定</strong></h1>
+	      <p>判定は世界健機構WHOによる</p>
+	    </div>
+
+
+		<div class="form-check form-check-inline">
+			あなたは：
+		  <input class="form-check-input" type="radio" name="check" id="inlineRadio1" value="option1">
+		  <label class="form-check-label" for="inlineRadio1">男</label>
+		</div>
+		<div class="form-check form-check-inline">
+		  <input class="form-check-input" type="radio" name="check" id="inlineRadio2" value="option2">
+		  <label class="form-check-label" for="inlineRadio2">女</label>
+		</div>
+
+		<form name = "keisan">
+
+			<div class="form-group">
+				<br><label for="example3">年齢</label>
+				<input type="number" placeholder="入力" size="10" name="take3"
+					class="form-control" id="example1">
+			</div>
+
+
+			<div class="form-group">
+				<label for="example1">身長（cm)</label>
+				<input type="number" placeholder="入力" size="10" name="take1"
+					class="form-control" id="example1">
+			</div>
+
+			<div class="form-group">
+				<label for="example2">体重（kg）</label>
+				<input type="number" placeholder="入力" size="10" name="take2"
+					class="form-control" id="example2">
+			</div>
+
+			
+
+
+
+			選択：<br>
+		    <div class="form-check form-check-inline">
+					
+				<input class="form-check-input" type="radio" name="checkabc" id="inlineRadio1" value="option1">
+				<label class="form-check-label" for="inlineRadio1">ほぼ運動しない。通勤、デスクワーク程度</label>
+			</div>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="checkabc" id="inlineRadio2" value="option2">
+				<label class="form-check-label" for="inlineRadio2">軽い運動。週に１回～２回程度の運動</label>
+			</div>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="checkabc" id="inlineRadio2" value="option2">
+				<label class="form-check-label" for="inlineRadio2">中程度の運動。週に３回～５回程度の運動</label>
+			</div>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="checkabc" id="inlineRadio2" value="option2">
+				<label class="form-check-label" for="inlineRadio2">激しい運動。週に６回～７回程度の運動</label>
+			</div>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="checkabc" id="inlineRadio2" value="option2">
+				<label class="form-check-label" for="inlineRadio2">非常に激しいの運動。一日に２回程度の運動</label>
+			</div>
+
+
+
+
+
+
+
+			<br>
+			 <input type="button" value="判定開始" onclick="calc()" class="btn btn-info active">
+			 <input type="button" id="btn1" value="Hiển thị" class="btn btn-success active"/>
+				</form>
+			<br>
+		      <h1>診断結果</h1>
+			<ul class="list-group list-group-flush">
+			  <li class="list-group-item">
+			  	標準体重(kg): <span id="std">...</span>
+			  </li>
+			  <li class="list-group-item">
+			  	満腹度      : <span id="std1">...</span>
+			  </li>
+			  <li class="list-group-item">
+			  	満腹度判定  : <span id="std2">...</span>
+			  </li>
+			</ul><br>
+
+			<h4>アドバイス</h4>
+			<div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="card">
+        <div class="card-header" role="tab" id="headingOne">
+          <h5 class="mb-0">
+            <a class="text-body" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">
+              カロリーについて
+            </a>
+          </h5>
+        </div><!-- /.card-header -->
+			<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+	          <div class="card-body">
+	            <ul>
+	              <li>Bootstrapとは</li>
+	              <li>より小さいい <span id="std3">...</span></li>
+	              <li><a href="bs_2.html">演習２：グリッドシステム</a></li>
+	              <li><a href="bs_3.html">演習３：テーブル</a></li>
+	            </ul>   
+	          </div><!-- /.card-body -->
+	        </div><!-- /.collapse -->
+	      </div><!-- /.card -->
+	      <div class="card">
+	        <div class="card-header" role="tab" id="headingTwo">
+	          <h5 class="mb-0">
+	            <a class="collapsed text-body" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
+	              JavaScriptの機能
+	            </a>
+	          </h5>
+	        </div><!-- /.card-header -->
+	        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+	          <div class="card-body">
+	            <ul>
+	              <li>ドロップダウンメニュー</li>
+	            </ul>
+	          </div><!-- /.card-body -->
+	        </div><!-- /.collapse -->
+	      </div><!-- /.card -->
+</div>
+
+
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>

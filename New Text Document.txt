@@ -1,0 +1,28 @@
+<div class="form-group">
+		        <label for="InputSelect">活動レベル（選択）</label>
+		        <select class="form-control" id="InputSelect">
+		          <option value="option1">ほぼ運動しない。通勤、デスクワーク程度</option>
+		          <option value="option2">軽い運動。週に１回～２回程度の運動</option>
+		          <option value="option3">中程度の運動。週に３回～５回程度の運動</option>
+		          <option value="option4">激しい運動。週に６回～７回程度の運動</option>
+		          <option value="option5">非常に激しいの運動。一日に２回程度の運動</option>
+		        </select>
+		      </div>
+
+
+
+
+
+if 	   (undo == '1') {tdee = bmr*1.2;}
+			else if(undo == '2') {tdee = bmr*1.375;}
+			else if(undo == '3') {tdee = bmr*1.55;}
+			else if(undo == '4') {tdee = bmr*1.725;}
+			else if(undo == '5') {tdee = bmr*1.9;}
+
+
+			<input type="button" value="判定開始" onclick="calc()" class="btn btn-info active">
+
+
+	            	<p>体重を増やす場合、一日に必要なカロリーが<span id="std3">...</span>以上<br>
+	            	   体重を減らす場合、一日に必要なカロリーが<span id="std3">...</span>以下<br>
+	            	   体重を保つ場合、一日に必要なカロリーが<span id="std3">...</span></p>	
