@@ -42,42 +42,42 @@
             {
 
 				var bmr = 0;
-			var dan = 0;
-			var on  = 0;
-			var tdee = 0;
-			
-			var checkbox = document.getElementsByName("check");
-			for(var i = 0; i < checkbox.length; i++){
-				if(checkbox[0].checked === true) {
-					dan = 1; 
-					on  = 0;
-					bmr = 13.397*w + 4.799*h - 5.677*age + 88.362;
-				}
-				else if (checkbox[1].checked === true){
-					dan = 0; 
-					on  = 1;
-					bmr = 9.247*w + 3.098*h - 4.33*age + 447.593;
-				}
-			}
-			document.getElementById("std7").innerHTML = bmr;
-			
-
-
+				var dan = 0;
+				var on  = 0;
 				var tdee = 0;
-                var checkabc = document.getElementsByName("checkabc");
-                for(var i = 0; i < checkabc.length; i++) {
-					if 		(checkabc[0].checked === true) {tdee = bmr*1.2;}
-					else if (checkabc[1].checked === true) {tdee = bmr*1.375;}
-					else if (checkabc[2].checked === true) {tdee = bmr*1.55;}
-					else if (checkabc[3].checked === true) {tdee = bmr*1.725;}
-					else if (checkabc[4].checked === true) {tdee = bmr*1.9;}
+				
+				var checkbox = document.getElementsByName("check");
+				for(var i = 0; i < checkbox.length; i++){
+					if(checkbox[0].checked === true) {
+						dan = 1; 
+						on  = 0;
+						bmr = 13.397*w + 4.799*h - 5.677*age + 88.362;
+					}
+					else if (checkbox[1].checked === true){
+						dan = 0; 
+						on  = 1;
+						bmr = 9.247*w + 3.098*h - 4.33*age + 447.593;
+					}
 				}
-				document.getElementById("std3").innerHTML = tdee;
-				document.getElementById("std4").innerHTML = tdee.toFixed(2);
-				document.getElementById("std5").innerHTML = tdee.toFixed(2);
-				document.getElementById("std6").innerHTML = tdee.toFixed(2);
-				alert("基礎代謝量 =" +bmr+ "\n一日の総消費カロリー =　" +tdee.toFixed(2)+
-						"\n体重を増やす場合、一日に必要なカロリーが" +tdee.toFixed(2)+ " 以上\n体重を減らす場合、一日に必要なカロリーが" +tdee.toFixed(2)+ " 以下\n体重を保つ場合、一日に必要なカロリーが" +tdee.toFixed(2));
+				document.getElementById("std7").innerHTML = bmr;
+				
+
+
+					var tdee = 0;
+	                var checkabc = document.getElementsByName("checkabc");
+	                for(var i = 0; i < checkabc.length; i++) {
+						if 		(checkabc[0].checked === true) {tdee = bmr*1.2;}
+						else if (checkabc[1].checked === true) {tdee = bmr*1.375;}
+						else if (checkabc[2].checked === true) {tdee = bmr*1.55;}
+						else if (checkabc[3].checked === true) {tdee = bmr*1.725;}
+						else if (checkabc[4].checked === true) {tdee = bmr*1.9;}
+					}
+					document.getElementById("std3").innerHTML = tdee;
+					document.getElementById("std4").innerHTML = tdee.toFixed(2);
+					document.getElementById("std5").innerHTML = tdee.toFixed(2);
+					document.getElementById("std6").innerHTML = tdee.toFixed(2);
+					alert("基礎代謝量 =" +bmr+ "\n一日の総消費カロリー =　" +tdee.toFixed(2)+
+							"\n体重を増やす場合、一日に必要なカロリーが" +tdee.toFixed(2)+ " 以上\n体重を減らす場合、一日に必要なカロリーが" +tdee.toFixed(2)+ " 以下\n体重を保つ場合、一日に必要なカロリーが" +tdee.toFixed(2));
             };
 
 		}
