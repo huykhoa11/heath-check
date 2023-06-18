@@ -1,1 +1,3 @@
 this is text from features\merge
+
+test merge by command line
