@@ -3,3 +3,5 @@ this is text from features\merge
 test merge by command line
 
 changed from github.com
+
+changed 2nd from github.com
