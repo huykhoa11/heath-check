@@ -4,4 +4,4 @@ test merge by command line
 
 changed from github.com
 
-changed 3rd from github.com
+changed 2nd from github.com
