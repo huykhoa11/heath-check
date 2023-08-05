@@ -1,7 +1,3 @@
 this is file created at features/patch-1
 
-<<<<<<< HEAD
 edited file at working directory
-=======
-edited file at working directory hihihahaha
->>>>>>> 88e4bd59f311d2f90dff50b59295f4a76f77022b
