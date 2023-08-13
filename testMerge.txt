@@ -4,4 +4,4 @@ test merge by command line
 
 changed from github.com
 
-changed at features/test
+changed at features/test hihihihi
