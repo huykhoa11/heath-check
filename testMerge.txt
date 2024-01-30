@@ -4,5 +4,5 @@ test merge by command line
 
 changed at local main branch
 
-test ToitorseGIt
+test merge at ToitorseGIt
 
