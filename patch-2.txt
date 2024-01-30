@@ -1,3 +1,5 @@
 this is file created at features/patch-2
 
 edited file local features/patch-2 new new
+
+edit file to test ToitorseGit at local features/patch-2
